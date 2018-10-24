@@ -5,4 +5,6 @@ request({
   json: true
 }, (error, response, body) => {
   console.log(`Address: ${body.results[0].providedLocation.location}`);
+  console.log(`Latitude: ${body.results[0].locations[0].displayLatLng.lat}`);
+  console.log(`Longitude: ${body.results[0].locations[0].displayLatLng.lng}`);
 });
