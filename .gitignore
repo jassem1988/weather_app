@@ -1,2 +1,6 @@
+
+#Full folders
 node_modules/
+
+#All files types ending with .json
 /*.json
