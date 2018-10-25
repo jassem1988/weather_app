@@ -6,9 +6,13 @@ const argv = yargs
     a: {
       demand: true,
       alias: 'address',
-      describe: 'Address to fetch weathe for'
+      describe: 'Address to fetch weathe for',
+      string: true
     }
-  });
+  })
+  .help()
+  .alias('help', 'h')
+  .argv;
 
 request({
   url: 'http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=1301%20lombard%20street%20philadelphia',
