@@ -14,10 +14,12 @@ const argv = yargs
   .alias('help', 'h')
   .argv;
 
-console.log(argv);
+var encodeAddress = encodeURIComponent(argv.a);
+console.log(encodeAddress);
+
 
 request({
-  url: 'http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=1301%20lombard%20street%20philadelphia',
+  url: `http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=${encodeAddress}`,
   json: true
 }, (error, response, body) => {
   console.log(`Address: ${body.results[0].providedLocation.location}`);
