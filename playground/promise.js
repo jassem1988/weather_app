@@ -1,6 +1,6 @@
 var asyncAdd = () => {
   return new Promise((resolve, reject) => {
-    setTimeout(()= {
+    setTimeout(() => {
       if(typeof a === 'number' && typeof b === 'number') {
         resolve(a + b);
       } else {
@@ -10,15 +10,21 @@ var asyncAdd = () => {
   });
 };
 
-var somePromise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve('Hey. It worked!'); //you can only resolve OR reject once
-    // reject('Unable to fulfill the promise');
-  }, 2500);
+asyncAdd(5,7).then((res) => {
+  console.log('Result: ' ,res);
+}, (errorMessage) => {
+  console.log(errorMessage);
 });
 
-somePromise.then((message) => {
-  console.log('Success: ', message);
-}, (errorMessage) => {
-  console.log('Error: ', errorMessage);
-});
+// var somePromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve('Hey. It worked!'); //you can only resolve OR reject once
+//     // reject('Unable to fulfill the promise');
+//   }, 2500);
+// });
+//
+// somePromise.then((message) => {
+//   console.log('Success: ', message);
+// }, (errorMessage) => {
+//   console.log('Error: ', errorMessage);
+// });
