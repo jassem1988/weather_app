@@ -1,4 +1,4 @@
-var asyncAdd = () => {
+var asyncAdd = (a, b) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if(typeof a === 'number' && typeof b === 'number') {
@@ -10,7 +10,7 @@ var asyncAdd = () => {
   });
 };
 
-asyncAdd(5,7).then((res) => {
+asyncAdd(5, 7).then((res) => {
   console.log('Result: ' ,res);
 }, (errorMessage) => {
   console.log(errorMessage);
