@@ -20,6 +20,4 @@ var geocodeAddress = (address) => {
   });
 };
 
-module.exports = {
-  geocodeAddress
-};
+module.exports.geocodeAddress = geocodeAddress;
