@@ -1,5 +1,7 @@
 var somePromise = new Promise((resolve, reject) => {
-  resolve('Hey. It worked!');
+  setTimeout(() => {
+    resolve('Hey. It worked!');
+  }, 2500);
 });
 
 somePromise.then((message) => {
