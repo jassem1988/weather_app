@@ -9,7 +9,7 @@ var geocodeAddress = (address, callback) => {
     json: true
   }, (error, response, body) => {
     if(error) {
-      callback('Unable to connect to MapQuest servers'));
+      callback('Unable to connect to MapQuest servers');
     } else if(body.results[0].locations[0].geocodeQualityCode === 'A1XAX') {
       callback('Unable to find the Address');
     } else if(body.results[0].locations[0].geocodeQualityCode !== 'A1XAX') {
