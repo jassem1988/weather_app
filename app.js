@@ -1,5 +1,4 @@
-const request = require("request"),
-        yargs = require('yargs');
+const   yargs = require('yargs'),
         geocode = require('./geocode/geocode.js');
 
 const argv = yargs
