@@ -1,7 +1,19 @@
+var asyncAdd = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(()= {
+      if(typeof a === 'number' && typeof b === 'number') {
+        resolve(a + b);
+      } else {
+        reject('Arguments must be numbers');
+      }
+    }, 1500);
+  });
+};
+
 var somePromise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    //resolve('Hey. It worked!'); //you can only resolve OR reject once
-    reject('Unable to fulfill the promise');
+    resolve('Hey. It worked!'); //you can only resolve OR reject once
+    // reject('Unable to fulfill the promise');
   }, 2500);
 });
 
