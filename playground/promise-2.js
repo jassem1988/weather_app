@@ -25,7 +25,7 @@ var geocodeAddress = (address) => {
 };
 
 
-geocodeAddress('47077').then((location) => {
+geocodeAddress('23220').then((location) => {
   console.log(JSON.stringify(location, undefined, 2));
 }, (errorMessage) => {
   console.log(errorMessage);
