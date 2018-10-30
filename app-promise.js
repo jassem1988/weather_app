@@ -22,5 +22,7 @@ const argv = yargs
   axios.get(geocodeUrl).then((response) => {
     console.log(response.data);
   }).catch((e) => {
-    console.log(e);
+    if(e.code === 'ENOTFOUND') {
+      console.log('Unable to connect to API servers');
+    }
   });
