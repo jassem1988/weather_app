@@ -17,4 +17,8 @@ const argv = yargs
 
   var encodeAddress = encodeURIComponent(argv.address); //or .a 'as the alias'
 
-  var geocodeUrl = `http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=${address}`;
+  var geocodeUrl = `http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=${encodeAddress}`;
+
+  axios.get(geocodeUrl).then((response) => {
+    
+  });

@@ -25,7 +25,7 @@ var geocodeAddress = (address) => {
 };
 
 
-geocodeAddress('23220').then((location) => {
+geocodeAddress('104 w franklin').then((location) => {
   console.log(JSON.stringify(location, undefined, 2));
 }, (errorMessage) => {
   console.log(errorMessage);
