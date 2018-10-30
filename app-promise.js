@@ -14,3 +14,7 @@ const argv = yargs
   .help()
   .alias('help', 'h')
   .argv;
+
+  var encodeAddress = encodeURIComponent(argv.address); //or .a 'as the alias'
+
+  var geocodeUrl = `http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=${address}`;
