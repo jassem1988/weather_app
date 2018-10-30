@@ -6,7 +6,7 @@ var geocodeAddress = (address) => {
     var encodeAddress = encodeURIComponent(address); //or .a 'as the alias'
 
     request({
-      url: `http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=${address}`,
+      url: `http://www.mapquestapi.com/geocoding/v1/address?key=43K4lEdm8kPrYnWGALeLEJDE1ZGKMP50&location=${encodeAddress}`,
       json: true
     }, (error, response, body) => {
       if(error) {
