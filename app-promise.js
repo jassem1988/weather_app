@@ -32,12 +32,17 @@ axios.get(geocodeUrl).then((response) => {
     throw new Error('Unable to find that address');
   }
 
-  var lat;
-  var lng;
+  var lat = response.data.results[0].geometry.location.lat;
+  var lng = response.data.results[0].geometry.location.lng;
 
   var weatherUrl = `https://api.darksky.net/forecast/e9dfa3a5dbd649460d5a0bed5bb9bc27/${lat},${lng}`;
 
-  console.log(response.data);
+  console.log(response.data.results[0].formatted_address);
+  return axios.get(weatherUrl);
+}).then((response) => {
+  var temperature = response.data.currently.temperature;
+  var apparentTemperature = response.data.currently.apparentTemperature;
+  console.log(`Its currently ${temperature}. It feels like ${apparentTemperature}.`);
 }).catch((e) => {
   if(e.code === 'ENOTFOUND') {
     console.log('Unable to connect to API servers');
