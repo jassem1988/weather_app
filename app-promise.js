@@ -55,9 +55,10 @@ axios.get(geocodeUrl).then((response) => {
 
   var temperature = response.data.currently.temperature;
   var apparentTemperature = response.data.currently.apparentTemperature;
-  var summary = response.data.currently.summary;
+  var summary = response.data.daily.summary;
 
-  console.log(`Its now ${formattedTime}. Its currently ${temperature}˚C. It feels like ${apparentTemperature}˚C. And it is ${summary}.`);
+  console.log(`Its now ${formattedTime}. Its currently ${temperature}˚C. It feels like ${apparentTemperature}˚C.
+    ${summary}`);
 }).catch((e) => {
   if(e.code === 'ENOTFOUND') {
     console.log('Unable to connect to API servers');
