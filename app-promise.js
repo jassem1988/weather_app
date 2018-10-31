@@ -19,6 +19,8 @@ var encodeAddress = encodeURIComponent(argv.address); //or .a 'as the alias'
 
 var geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeAddress}&key=AIzaSyCtybqZ5-wyMlKftHdz7-SzvM7ulhfAG2I`;
 
+
+
 // AIzaSyCtybqZ5-wyMlKftHdz7-SzvM7ulhfAG2I
 // https://maps.googleapis.com/maps/api/geocode/json?address=1301+lombard+st+philadelphia&key=AIzaSyCtybqZ5-wyMlKftHdz7-SzvM7ulhfAG2I
 
@@ -29,6 +31,11 @@ axios.get(geocodeUrl).then((response) => {
   if(response.data.status === 'ZERO_RESULTS') {
     throw new Error('Unable to find that address');
   }
+
+  var lat;
+  var lng;
+
+  var weatherUrl = `https://api.darksky.net/forecast/e9dfa3a5dbd649460d5a0bed5bb9bc27/${lat},${lng}`;
 
   console.log(response.data);
 }).catch((e) => {
